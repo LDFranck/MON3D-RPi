@@ -1,6 +1,6 @@
 # MON3D-RPi
 
-Bem-vindo ao tutorial de instalação e configuração do sistema **MON3D** para controle e monitoramento remoto de impressoras 3D.\
+Bem-vindo ao tutorial de instalação e configuração do sistema **MON3D** para controle e monitoramento remoto de impressoras 3D.
 Antes de começar o processo, verifique a disponibilidade dos seguintes itens: 
 * Computador com conexão internet;
 * Cartão microSD de 8GB (mínimo) e dispositivo de leitura compatível;
