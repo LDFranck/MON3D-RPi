@@ -30,10 +30,19 @@ sudo -E rpi-eeprom-config --edit
 ```
 Utilizando o editor nativo do Ubuntu Server, altere a opção `BOOT_ORDER` para `BOOT_ORDER=0xf41`. Pressione `Ctrl+S` para salvar e `Ctrl+X` para sair do editor. Caso o seu arquivo já esteja com essa configuração ou `BOOT_ORDER` vazio, nenhuma alteração precisa ser feita e você pode sair do editor. Para aplicar as alterações, reinicie a placa RPi novamente com o comando `reboot` e volte ao terminal assim que o processo for finalizado.
 
-> ✅ Estamos quase lá, só mais um pouco! 
-
 Agora utilize o seguinte comando para instalar o gerenciador de versões Git:
 ```
 sudo apt-get install git
 ```
+Na sequência, use o comando abaixo para baixar os arquivos de configuração do sistema **MON3D** para sua placa RPi:
+```
+cd ~ && git clone https://github.com/LDFranck/MON3D-RPi
+```
+Uma vez finalizado o download, execute o script de configuração `mon3d_setup.sh` com o comando:
+```
+cd ~/MON3D-RPi/ && sudo bash mon3d_setup.sh
+```
+✅ Pronto!
+
+O sistema **MON3D** está instalado e pronto para uso. Na próxima vez que ligar sua placa Raspberry Pi ele será executado automaticamente. Fácil não?
 
