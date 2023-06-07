@@ -13,7 +13,7 @@ Inicialmente, o cartão microSD deve ser configurado como uma mídia de instala�
 Finalizada a configuração, o cartão microSD deve ser inserido no slot da Raspberry Pi e a placa energizada com a fonte de alimentação. Com o sistema ligado, conecte-se ao terminal de controle do Ubuntu Server remotamente através de SSH (vide tutorial), ou fisicamente com o teclado USB + monitor de vídeo e cabo HDMI. Será necessário fazer login com o usuário previamente criado no Raspberry Pi Imager.
 
 > **:warning: Atenção:**\
-> Espere algum tempo após a primeira inicialização para que o sistema operacional crie os arquivos de usuário. Caso você não tenha previamente configurado um usuário, o Ubuntu Server utiliza como padrão o `user: ubuntu` e `password: ubuntu` no primeiro login, solicitando a criação de uma nova senha no processo.
+> Espere algum tempo após a primeira inicialização para que o sistema operacional crie os arquivos de usuário. Caso você não tenha configurado um usuário, o Ubuntu Server utiliza como padrão o `user: ubuntu` e `password: ubuntu` no primeiro login, solicitando a criação de uma nova senha no processo.
 
 ### Configurando Ambiente RPi:
 Antes de começar a configuração do ambiente RPi, verifique a conexão da placa com a internet usando o comando `ping -c 1 google.com`. Caso você não tenha configurado a rede Wi-Fi no Raspberry Pi Imager, conecte um cabo ethernet com conexão internet temporariamente para executar esses primeiros procedimentos. Posteriormente a rede Wi-Fi poderá ser adicionada pelo sistema **MON3D**.
@@ -22,6 +22,18 @@ Uma vez conectado ao terminal do Ubuntu Server, execute o seguinte comando para 
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
-Feito isso, reinicie o sistema com o comando `reboot` para aplicar as atualizações. Aguarde a renicialização e se conecte novamente ao terminal.
+Feito isso, reinicie o sistema com o comando `reboot` para aplicar as atualizações. 
 
+Agora vamos verificar a ordem de inicialização do dispositivo para garantir um boot prioritário pelo cartão microSD. Aguarde a renicialização e se conecte novamente à placa. Insira o seguinte comando no terminal: 
+```bash
+sudo -E rpi-eeprom-config --edit
+```
+Utilizando o editor nativo do Ubuntu Server, altere a opção `BOOT_ORDER` para `BOOT_ORDER=0xf41`. Pressione `Ctrl+S` para salvar e `Ctrl+X` para sair do editor. Caso o seu arquivo já esteja com essa configuração ou `BOOT_ORDER` vazio, nenhuma alteração precisa ser feita e você pode sair do editor. Para aplicar as alterações, reinicie a placa RPi novamente com o comando `reboot` e volte ao terminal assim que o processo for finalizado.
+
+> ✅ Estamos quase lá, só mais um pouco! 
+
+Agora utilize o seguinte comando para instalar o gerenciador de versões Git:
+```bash
+sudo apt-get install git
+```
 
