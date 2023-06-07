@@ -20,7 +20,7 @@ Antes de começar a configuração do ambiente RPi, verifique a conexão da plac
 
 Uma vez conectado ao terminal do Ubuntu Server, execute o seguinte comando para atualizar os arquivos e pacotes do sistema para a última versão disponível. Será solicitado a senha do usuário para prosseguir a atualização, e uma confirmação `[Y/n]` na qual basta pressionar a tecla `Enter` do teclado.
 ```
-sudo apt-get update && sudo apt-get upgrade
+sudo apt update && sudo apt upgrade
 ```
 Feito isso, reinicie o sistema com o comando `reboot` para aplicar as atualizações. 
 
@@ -32,7 +32,7 @@ Utilizando o editor nativo do Ubuntu Server, altere a opção `BOOT_ORDER` para 
 
 Agora utilize o seguinte comando para instalar o gerenciador de versões Git:
 ```
-sudo apt-get install git
+sudo apt install git
 ```
 Na sequência, use o comando abaixo para baixar os arquivos de configuração do sistema **MON3D** para sua placa RPi:
 ```
