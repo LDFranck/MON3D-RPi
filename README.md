@@ -44,5 +44,5 @@ cd ~/MON3D-RPi/ && sudo bash mon3d_setup.sh
 ```
 ✅ Pronto!
 
-O sistema **MON3D** está instalado e pronto para uso. Na próxima vez que ligar sua placa Raspberry Pi ele será executado automaticamente. Fácil não?
+O sistema **MON3D** está instalado e pronto para uso. Na próxima vez que ligar sua placa Raspberry Pi ele será executado automaticamente. Fácil não? 😎
 
