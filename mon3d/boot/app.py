@@ -30,7 +30,7 @@ def post_config():
     lgpio.gpio_write(h, led_pin, 0)
     lgpio.gpiochip_close(h)
     
-    os.system(f'WIFI_SSID={wifi_ssid} WIFI_PSWD={wifi_pswd} ./mon3d/boot/mon3d_wifi.sh &')
+    os.system(f'WIFI_SSID={wifi_ssid} WIFI_PSWD={wifi_pswd} /mon3d/boot/mon3d_wifi.sh &')
     return render_template('post_setup.html', device_id=device_id)
 
 if __name__ == '__main__':
