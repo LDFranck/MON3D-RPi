@@ -22,25 +22,25 @@ Uma vez conectado ao terminal do Ubuntu Server, execute o seguinte comando para 
 ```
 sudo apt update && sudo apt upgrade
 ```
-Feito isso, reinicie o sistema com o comando `reboot` para aplicar as atualizações. 
+Dependendo dos pacotes instalados, será solicitada a reinicialização de alguns módulos do sistema. Para prosseguir, pressione a tecla `Enter` do teclado quando o menu de seleção abrir para reiniciar os serviços e aplicar as atualizações.
 
-Agora vamos verificar a ordem de inicialização do dispositivo para garantir um boot prioritário pelo cartão microSD. Aguarde a renicialização e se conecte novamente à placa. Insira o seguinte comando no terminal: 
+Agora vamos verificar a ordem de inicialização do dispositivo para garantir um boot prioritário pelo cartão microSD. Aguarde a finalização da etapa anterior e insira o seguinte comando no terminal: 
 ```
 sudo -E rpi-eeprom-config --edit
 ```
-Utilizando o editor nativo do Ubuntu Server, altere a opção `BOOT_ORDER` para `BOOT_ORDER=0xf41`. Pressione `Ctrl+S` para salvar e `Ctrl+X` para sair do editor. Caso o seu arquivo já esteja com essa configuração ou `BOOT_ORDER` vazio, nenhuma alteração precisa ser feita e você pode sair do editor. Para aplicar as alterações, reinicie a placa RPi novamente com o comando `reboot` e volte ao terminal assim que o processo for finalizado.
+Utilizando o editor nativo do Ubuntu Server, altere a opção `BOOT_ORDER` para `BOOT_ORDER=0xf41`. Pressione `Ctrl+S` para salvar e `Ctrl+X` para sair do editor. Caso o seu arquivo já esteja com essa configuração ou `BOOT_ORDER` vazio, nenhuma alteração precisa ser feita e você pode sair do editor. Para aplicar as alterações, reinicie a placa RPi com o comando `sudo reboot` e volte ao terminal assim que o processo for finalizado.
 
 Agora utilize o seguinte comando para instalar o gerenciador de versões Git:
 ```
 sudo apt install git
 ```
-Na sequência, use o comando abaixo para baixar os arquivos de configuração do sistema **MON3D** para sua placa RPi:
+Na sequência, use o comando abaixo para baixar os arquivos do sistema **MON3D** para sua placa RPi:
 ```
 cd ~ && git clone https://github.com/LDFranck/MON3D-RPi
 ```
 Uma vez finalizado o download, execute o script de configuração `mon3d_setup.sh` com o comando:
 ```
-cd ~/MON3D-RPi/ && sudo bash mon3d_setup.sh
+cd ~/MON3D-RPi/ && sudo chmod +x mon3d_setup.sh && sudo ./mon3d_setup.sh
 ```
 ✅ Pronto!
 
