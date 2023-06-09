@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css"/>
+    <title>Mon3D Wi-Fi Setup</title>
+</head>
+<body>
+    <h1>MON3D Wi-Fi Setup</h1>
+    <form action="/" method="post" onsubmit="return checkSSID()">
+        <label for="ssid">Wi-Fi SSID:</label><br>
+        <input type="text" id="ssid" name="ssid">
+        <span id="error-message" class="error-message"></span><br>
+
+        <label for="pswd">Wi-Fi Password:</label><br>
+        <input type="password" id="pwsd" name="pswd"><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+    Device ID: {{ device_id }}
+    <button id="copyButton" onclick="copyToClipboard({{ device_id }})">Copy</button>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
