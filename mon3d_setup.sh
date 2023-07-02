@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: check and fix everything
+
 AP_SSID="MON3D"
 AP_PSWD="12345678"
 #AP_IP="10.42.0.1/24"
