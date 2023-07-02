@@ -19,7 +19,6 @@ if [ "$AP_EXIST" -ne 0 ]; then
     nmcli con modify "Hotspot" connection.autoconnect-priority -1
 #   nmcli con modify "Hotspot" ipv4.addr "$AP_IP"
     nmcli con up "Hotspot"
-    AP_CHECK="activated"
 fi
 
 while ! ping -c 1 igbt.eesc.usp.br; do
