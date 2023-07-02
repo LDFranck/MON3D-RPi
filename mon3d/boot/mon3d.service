@@ -7,4 +7,4 @@ Type=oneshot
 ExecStart=/mon3d/boot/mon3d_init.sh
 
 [Install]
-WantedBy=multi-usert.target
+WantedBy=multi-user.target
