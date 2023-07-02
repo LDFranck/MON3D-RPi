@@ -3,27 +3,18 @@ function checkSSID() {
    var errorMessage = document.getElementById("error-message");
 
    if (ssid.trim() === "") {
-       errorMessage.innerText = "Please enter a Wi-Fi SSID";
+       errorMessage.innerText = "Campo obrigatório.";
        return false;
    } else {
       errorMessage.innerText = "";
    }
 }
 
-function copyToClipboard(text) {
-    var textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-  
-    var button = document.getElementById("copyButton");
-    button.innerHTML = "Done!";
-    button.disabled = true;
-  
-    setTimeout(function() {
-      button.innerHTML = "Copy to Clipboard";
-      button.disabled = false;
-    }, 2000);
-}
+function triggerCopy() {   
+   var tempInput = document.createElement("input");
+   tempInput.value = document.getElementById("pwsd1").value;
+   document.body.appendChild(tempInput);
+   tempInput.select();
+   document.execCommand("copy");
+   document.body.removeChild(tempInput);
+ }
